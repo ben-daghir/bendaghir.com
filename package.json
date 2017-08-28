@@ -1,0 +1,25 @@
+{
+  "name": "bendaghir",
+  "version": "1.0.0",
+  "description": "JSON Package for bendaghir.com",
+  "main": "app.js",
+  "scripts": {
+    "test": "print(\"Working\")"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ben-daghir/bendaghir.com.git"
+  },
+  "keywords": [
+    "website"
+  ],
+  "author": "Benjamin Daghir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ben-daghir/bendaghir.com/issues"
+  },
+  "homepage": "https://github.com/ben-daghir/bendaghir.com#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
