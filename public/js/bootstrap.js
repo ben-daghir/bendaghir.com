@@ -63,7 +63,7 @@ if (typeof jQuery === 'undefined') {
 
   //Load Navbar
   $(function(){
-    $("#navbarCopy").load("../../views/navbar");
+    $("#navbarCopy").load("../../views/navbar.html");
     console.log("navbar attempted load");
   });
 
