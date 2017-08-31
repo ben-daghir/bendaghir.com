@@ -63,8 +63,8 @@ if (typeof jQuery === 'undefined') {
 
   //Load Navbar
   $(function(){
-    $("#navbarCopy").load("../navbar");
-    console.log("navbar");
+    $("#navbarCopy").load("../../views/navbar");
+    console.log("navbar attempted load");
   });
 
   //Academics First Slide Show
