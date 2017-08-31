@@ -22,8 +22,8 @@ app.get('/coding/home', function(req, res) {
     res.sendFile(path.join(__dirname + '/views/coding/home.html'));
 });
 
-app.get('/grandchallenges/home', function(req, res) {
-    res.sendFile(path.join(__dirname + '/views/grandchallenges/home.html'));
+app.get('/employment/home', function(req, res) {
+    res.sendFile(path.join(__dirname + '/views/employment/home.html'));
 });
 
 app.get('/projects&patents/home', function(req, res) {
