@@ -155,6 +155,9 @@ $(document).ready(function(){
 
 
     console.log("Successfully attempted to reposition Portfolio overlay");
+    console.log($(".text").css("top"));
+    console.log($('.backImage2').offset().top);
+    console.log($(".text2").offset().top);
 
     //Universal top for adjustments to Overlay Portfolio
     initialTop = shiftUp;
