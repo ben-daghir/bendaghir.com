@@ -155,7 +155,7 @@ $(document).ready(function(){
 
 
     console.log("Successfully attempted to reposition Portfolio overlay");
-    if ($('.backImage2').offset().top >= $(".text2").offset().top-7.5 || $('.backImage2').offset().top <= $(".text2").offset().top+7.5){
+    if ($('.backImage2').offset().top <= $(".text2").offset().top-7.5 || $('.backImage2').offset().top >= $(".text2").offset().top+7.5){
       console.log("Failed to adjust overlay");
     }
     //Universal top for adjustments to Overlay Portfolio
