@@ -110,7 +110,7 @@ $(window).resize(function() {
 });
 
 //Initial Portfolio Resize
-setTimeout(function(){
+$(function(){
   //Get window width and save as global var
   initialWindowWidth = $(window).width();
   if ($(".backImage3").length){
@@ -162,7 +162,7 @@ setTimeout(function(){
   else{
     console.log("Unable To Resize Effectively");
   }
-},1000);
+});
 
 
 // Google Maps Scripts
