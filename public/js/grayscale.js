@@ -315,5 +315,5 @@ function init() {
         map: map,
         icon: image
     });
-    initialResize();
+    setTimeout(initialResize(), 1000);
 }
