@@ -110,7 +110,7 @@ $(window).resize(function() {
 });
 
 //Initial Portfolio Resize
-$(function(){
+$(document).ready(function(){
   //Get window width and save as global var
   initialWindowWidth = $(window).width();
   if ($(".backImage3").length){
