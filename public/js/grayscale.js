@@ -158,6 +158,9 @@ $(document).ready(function(){
     if ($('.backImage2').offset().top <= $(".text2").offset().top-7.5 || $('.backImage2').offset().top >= $(".text2").offset().top+7.5){
       console.log("Failed to adjust overlay");
     }
+    else{
+      console.log("Success");
+    }
     //Universal top for adjustments to Overlay Portfolio
     initialTop = shiftUp;
   }
