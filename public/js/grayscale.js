@@ -125,7 +125,7 @@ $(document).ready(function(){
     $(".download-section").height(backGroundHeight-addedDist);
 
     //Bottom Alignment for Portfolio Overlay Left
-    var photoTop = $('.backImage2').offset().top;
+    var photoTop = $('.backImage4').offset().top;
     var textTop = $(".text2").offset().top;
     var shiftUp = textTop - photoTop;
     if (browserType.search("safari") != -1 || browserType.search("firefox") != -1){
