@@ -11,7 +11,7 @@ console.log("App listening on port:", port);
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/index.html'));
+    res.sendFile(path.join(__dirname + '/views/index.html'));
 });
 
 app.get('/academics/home', function(req, res) {
@@ -22,8 +22,8 @@ app.get('/coding/home', function(req, res) {
     res.sendFile(path.join(__dirname + '/views/coding/home.html'));
 });
 
-app.get('/employment/home', function(req, res) {
-    res.sendFile(path.join(__dirname + '/views/employment/home.html'));
+app.get('/grandchallenges/home', function(req, res) {
+    res.sendFile(path.join(__dirname + '/views/grandchallenges/home.html'));
 });
 
 app.get('/projects&patents/home', function(req, res) {
