@@ -157,7 +157,7 @@ $(document).ready(function(){
     console.log("Successfully attempted to reposition Portfolio overlay");
     if ($('.backImage2').offset().top <= $(".text2").offset().top-7.5 || $('.backImage2').offset().top >= $(".text2").offset().top+7.5){
       console.log("Failed to adjust overlay");
-      //window.location.href = '/404';
+      window.location.href = '/404';
       console.log("Did it work?");
     }
     else{
