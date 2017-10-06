@@ -160,12 +160,8 @@ $(document).ready(function(){
     console.log("Successfully attempted to reposition Portfolio overlay");
     if ($('.backImage2').offset().top <= $(".text2").offset().top-7.5 || $('.backImage2').offset().top >= $(".text2").offset().top+7.5){
       console.log("Failed to adjust overlay");
-        if (reload) {
-            location.reload();
-            reload = false;
-        } else {
-            window.location.href = '/404';
-        }
+
+      window.location.href = '/404';
     }
     else{
       console.log("Success");
