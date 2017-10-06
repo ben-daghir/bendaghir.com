@@ -134,7 +134,9 @@ $(document).ready(function(){
     if (browserType.search("safari") != -1 || browserType.search("firefox") != -1){
       console.log("Not Chrome browser identified.");
       shiftUp = shiftUp + ($(".backImage3").height());
-    };
+  } else if (browserType.search("safari") != -1) {
+      shiftUp += 4;
+  };
 
     $(".text").css("top", shiftUp + "px");
     $(".text1").css("top", shiftUp + "px");

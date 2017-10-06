@@ -425,7 +425,7 @@ a:focus {
   font-family: "Montserrat", "Helvetica Neue";
   white-space: normal;
   word-wrap: normal;
-  border-width: thick;
+  border-width: 4px;
   border-style: solid;
   border-color: #42DCA3;
   max-width: 100%;
