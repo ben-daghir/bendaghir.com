@@ -417,7 +417,7 @@ a:focus {
 }
 
 .backgroundAboutMe{
-  background: url(../img/AboutMeEdit3.png);
+  background: url(../img/AboutMeEdit3.png) no-repeat bottom center scroll;
   background-color: transparent;
   background-repeat: no-repeat;
   background-size: contain;
