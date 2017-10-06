@@ -155,7 +155,7 @@ $(document).ready(function(){
 
 
     console.log("Successfully attempted to reposition Portfolio overlay");
-    setTimeout(didOverlay(), 500);
+    setTimeout(didOverlay(), 5000);
 });
 function didOverlay() {
     if ($('.backImage2').offset().top <= $(".text2").offset().top-7.5 || $('.backImage2').offset().top >= $(".text2").offset().top+7.5){
