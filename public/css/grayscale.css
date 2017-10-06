@@ -194,7 +194,7 @@ a:focus {
 
 @media (max-width: 768px) {
     .backgroundAboutMe{
-      background: url(../img/AboutMeEdit3.png) no-repeat bottom center scroll;
+      background: url(../img/AboutMeEdit3.png);
       background-color: transparent;
       background-repeat: no-repeat;
       background-size: contain;
@@ -205,8 +205,8 @@ a:focus {
       -o-background-size: cover;
       position: absolute;
       width: 100%;
-      height: auto;
-      left: 100px;
+      height: 100%;
+      left: -15px;
     }
 }
 .btn-circle {
