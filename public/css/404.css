@@ -1,4 +1,11 @@
-.body {
+body {
     background-image: url("../img/404.gif");
     background-size: cover;
+}
+h1 {
+    margin: 0 0 35px;
+    text-transform: uppercase;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
