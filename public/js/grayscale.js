@@ -155,6 +155,9 @@ $(document).ready(function(){
 
 
     console.log("Successfully attempted to reposition Portfolio overlay");
+    setTimeout(didOverlay(), 500);
+});
+function didOverlay() {
     if ($('.backImage2').offset().top <= $(".text2").offset().top-7.5 || $('.backImage2').offset().top >= $(".text2").offset().top+7.5){
       console.log("Failed to adjust overlay");
       window.location.href = '/404';
@@ -169,7 +172,7 @@ $(document).ready(function(){
   else{
     console.log("Unable To Resize Effectively");
   }
-});
+}
 
 
 // Google Maps Scripts
