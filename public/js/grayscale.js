@@ -162,6 +162,7 @@ $(document).ready(function(){
       console.log("Failed to adjust overlay");
         if (reload) {
             location.reload();
+            reload = false;
         } else {
             window.location.href = '/404';
         }
