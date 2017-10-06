@@ -161,7 +161,7 @@ $(document).ready(function(){
     if ($('.backImage2').offset().top <= $(".text2").offset().top-7.5 || $('.backImage2').offset().top >= $(".text2").offset().top+7.5){
       console.log("Failed to adjust overlay");
         if (reload) {
-            location.reload;
+            location.reload();
         } else {
             window.location.href = '/404';
         }
