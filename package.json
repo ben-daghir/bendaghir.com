@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/ben-daghir/bendaghir.com#readme",
   "dependencies": {
-    "express": "^4.15.2"
+    "express": "^4.16.2"
   }
 }

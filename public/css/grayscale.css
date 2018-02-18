@@ -194,7 +194,7 @@ a:focus {
 
 @media (max-width: 768px) {
     .backgroundAboutMe{
-      background: url(../img/AboutMeEdit3.png);
+      background: url("../img/AboutMeEdit3.png");
       background-color: transparent;
       background-repeat: no-repeat;
       background-size: contain;
@@ -319,7 +319,7 @@ a:focus {
   border-color: rgba(0,0,0,0);
 }
 
-.flipper:hover .backImage2{
+.flipper:hover .backImage2 {
   transition: .1s ease;
   transition-delay: .5s;
   filter: grayscale(100%);
@@ -417,7 +417,7 @@ a:focus {
 }
 
 .backgroundAboutMe{
-  background: url(../img/AboutMeEdit3.png) no-repeat bottom center scroll;
+  background: url("../img/AboutMeEdit3.png") no-repeat bottom center scroll;
   background-color: transparent;
   background-repeat: no-repeat;
   background-size: contain;
@@ -428,7 +428,7 @@ a:focus {
   -o-background-size: cover;
   position: absolute;
   width: 100%;
-  height: auto;
+  height: 125%;
   left: -15px;
 }
 
