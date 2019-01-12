@@ -4,178 +4,77 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-
-//Window width
-var initialWindowWidth
-var initialTop
-var initialLineHeight
-var initalTopMargin
-
-//Boolean For Reload
-var reload = true;
-
-//Browser type
-navigator.sayswho = (function(){
-    var ua= navigator.userAgent, tem,
-    M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
-    if(/trident/i.test(M[1])){
-        tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
-        return 'IE '+(tem[1] || '');
-    }
-    if(M[1]=== 'Chrome'){
-        tem= ua.match(/\b(OPR|Edge)\/(\d+)/);
-        if(tem!= null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
-    }
-    M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
-    if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
-    return M.join(' ');
-})();
-
-var browserType = (navigator.sayswho).toLowerCase()
-
-console.log(browserType);
-
 // jQuery to collapse the navbar on scroll
 function collapseNavbar() {
-    if ($(".navbar").offset().top > 50) {
+    if ($(".navbar").offset().top > 50 || $(".background").offset().top < -550) {
         $(".navbar-fixed-top").addClass("top-nav-collapse");
     } else {
         $(".navbar-fixed-top").removeClass("top-nav-collapse");
     }
 }
 
+function reScroll() {
+    var scrollTop     = $(window).scrollTop(),
+    elementOffset = $('#about').offset().top,
+    distance      = (elementOffset - scrollTop);
+    if (distance < 50) {
+        var rescroll = document.getElementById("container");
+        rescroll.scrollTop = 0;
+    }
+}
+
 $(window).scroll(collapseNavbar);
+$(window).scroll(reScroll);
+$("#container").scroll(function() {
+    $("#intro-text").css("opacity", 1 - $("#container").scrollTop() / 250);
+    collapseNavbar();
+});
 $(document).ready(collapseNavbar);
+
+$("#container").scroll(function() {
+    console.log($("#container").scrollTop());
+    console.log($("#container").height());
+    if($("#container").scrollTop() > $("#container").height() - 5) {
+        $('html, body').stop().animate({
+            scrollTop: $("#about").offset().top
+        }, 1500, 'easeOutQuart');
+    }
+});
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
+    $('a.page-scroll2').bind('click', function(event) {
+        var $anchor = $(this);
+        if (window.innerWidth > 768) {
+            $('#container').stop().animate({
+                scrollTop: $('#container').prop("scrollHeight")
+            }, 2000, 'easeInCirc');
+            setTimeout(function () {
+                $('html, body').stop().animate({
+                    scrollTop: $($anchor.attr('href')).offset().top
+                }, 1000, 'easeInOutExpo');
+            }, 1500);
+            event.preventDefault();
+        } else {
+            $('html, body').stop().animate({
+                scrollTop: $($anchor.attr('href')).offset().top
+            }, 1000, 'easeInOutExpo');
+        }
+    });
+
     $('a.page-scroll').bind('click', function(event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
             scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
+        }, 1000, 'easeInOutExpo');
         event.preventDefault();
     });
 });
 
-$(window).ready(function(){
-  $("#resume-div").load("file:///views/resume.html");
-});
-
 // Closes the Responsive Menu on Menu Item Click
 $('.navbar-collapse ul li a').click(function() {
-    $(".navbar-collapse").collapse('hide');
+    $(this).closest('.collapse').collapse('toggle');
 });
-
-//Function for resizing Portfolio background to be consistent
-//with flip containers
-$(window).resize(function() {
-  if ($(".backImage3").length){
-    var photoPosition = $(".backImage3").offset().top;
-    photoPosition = photoPosition + $(".backImage3").height();
-    var containerPosition = $(".download-section").offset().top;
-    containerPosition = containerPosition + $(".download-section").height();
-    var distanceBetweenConPhoto = containerPosition - photoPosition;
-    var desiredDistance = $(window).height() * .05; //Percentage of View Height
-    var addedDist = distanceBetweenConPhoto - desiredDistance;
-    var backGroundHeight = $(".download-section").height();
-    $(".download-section").height(backGroundHeight-addedDist);
-
-    //Overlay Portfolio Resize
-    var proportionalResizePercent = $(window).width()/initialWindowWidth;
-    console.log(initialTop,proportionalResizePercent);
-    var adjustedTop  = initialTop * proportionalResizePercent;
-
-    adjustedTop = Math.ceil(adjustedTop);
-
-    $(".text").css("top", adjustedTop + "px");
-    $(".text1").css("top", adjustedTop + "px");
-    $(".text2").css("top", adjustedTop +"px");
-    $(".text3").css("top", adjustedTop +"px");
-    $(".text4").css("top", adjustedTop +"px");
-    $(".text5").css("top", adjustedTop + "px");
-
-    //Button Centering for Portfolio
-    var lineHeight = initialLineHeight * proportionalResizePercent;
-    $(".text").css("line-height", lineHeight + "px");
-    $(".text2").css("line-height", lineHeight + "px");
-    $(".text3").css("line-height", lineHeight + "px");
-    $(".text4").css("line-height", lineHeight + "px");
-
-    var topMargin = initalTopMargin * proportionalResizePercent;
-    $(".rd").css("margin-top", topMargin + "px");
-    $(".pp").css("margin-top", topMargin + "px");
-
-  }
-  else{
-    console.log("Unable To Resize Effectively");
-  }
-});
-
-//Initial Portfolio Resize
-$(document).ready(function(){
-  //Get window width and save as global var
-  initialWindowWidth = $(window).width();
-  if ($(".backImage3").length){
-    var photoPosition = $(".backImage3").offset().top;
-    photoPosition = photoPosition + $(".backImage3").height();
-    var containerPosition = $(".download-section").offset().top;
-    containerPosition = containerPosition + $(".download-section").height();
-    var distanceBetween = containerPosition - photoPosition;
-    var desiredDistance = $(window).height() * .05; //Percentage of View Height
-    var addedDist = distanceBetween - desiredDistance;
-    var backGroundHeight = $(".download-section").height();
-    $(".download-section").height(backGroundHeight-addedDist);
-
-    //Bottom Alignment for Portfolio Overlay Left
-    var photoTop = $('.backImage4').offset().top;
-    var textTop = $(".text2").offset().top;
-    var shiftUp = textTop - photoTop;
-    if (browserType.search("safari") != -1 || browserType.search("firefox") != -1){
-      console.log("Not Chrome browser identified.");
-      shiftUp = shiftUp + ($(".backImage3").height());
-  } else if (browserType.search("safari") != -1) {
-      shiftUp += 4;
-  };
-
-    $(".text").css("top", shiftUp + "px");
-    $(".text1").css("top", shiftUp + "px");
-    $(".text2").css("top", shiftUp + "px");
-    $(".text3").css("top", shiftUp + "px");
-    $(".text4").css("top", shiftUp + "px");
-    $(".text5").css("top", shiftUp + "px");
-
-    //Button Alignment
-    var lineHeight = $(".text4").height();
-    initialLineHeight = lineHeight;
-    $(".text").css("line-height", lineHeight + "px");
-    $(".text2").css("line-height", lineHeight + "px");
-    $(".text3").css("line-height", lineHeight + "px");
-    $(".text4").css("line-height", lineHeight + "px");
-
-    var marginheight = $(".text1").height()/5;
-    $(".rd").css("margin-top", marginheight + "px");
-    $(".pp").css("margin-top", marginheight + "px");
-    initalTopMargin = marginheight;
-
-
-    console.log("Successfully attempted to reposition Portfolio overlay");
-    if ($('.backImage2').offset().top <= $(".text2").offset().top-7.5 || $('.backImage2').offset().top >= $(".text2").offset().top+7.5){
-      console.log("Failed to adjust overlay");
-
-      //window.location.href = '/404';
-    }
-    else{
-      console.log("Success");
-    }
-    //Universal top for adjustments to Overlay Portfolio
-    initialTop = shiftUp;
-  }
-  else{
-    console.log("Unable To Resize Effectively");
-  }
-});
-
 
 // Google Maps Scripts
 var map = null;
@@ -328,3 +227,30 @@ function init() {
         icon: image
     });
 }
+
+// Portfolio Scripts
+var tiles = document.getElementsByClassName('tile');
+recurseFlip(tiles, 0);
+
+function recurseFlip(tiles, i) {
+    if (i < tiles.length) {
+        var tile = tiles[i];
+        tile.addEventListener('mouseover', function() {
+          tile.classList.toggle('flipped');
+        });
+
+        tile.addEventListener('mouseout', function() {
+          tile.classList.toggle('flipped');
+        });
+        recurseFlip(tiles, ++i);
+    }
+}
+
+//Portfolio Navbar Copy
+
+
+//Load Navbar
+$(function(){
+$("#navbarCopy").load("../../views/navbar.html");
+console.log("navbar attempted load");
+});

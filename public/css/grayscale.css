@@ -7,13 +7,12 @@ body {
   width: 100%;
   height: 100%;
   font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: black; /*Text scheme*/
-  background-color: white; /*Color Scheme*/
+  color: white;
+  background-color: black;
 }
 html {
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
 }
 h1,
 h2,
@@ -32,7 +31,7 @@ p {
   font-size: 18px;
   line-height: 1.5;
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   p {
     margin: 0 0 35px;
     font-size: 20px;
@@ -102,7 +101,30 @@ a:focus {
 .navbar-custom .nav li.active a:hover {
   color: white;
 }
-@media (min-width: 768px) {
+
+.bio-pic {
+    /* display: none; */
+    max-height: 200px;
+}
+
+@media (min-width: 770px) {
+    .about-me-background {
+        float: left;
+        height: 100%;
+        width: 50%;
+    }
+
+    .bio-pic {
+        display: block;
+        width: auto;
+        max-height: 500px;
+    }
+
+    .col-offset-right {
+        float: right;
+        width: 50%;
+    }
+
   .navbar-custom {
     padding: 20px 0;
     border-bottom: none;
@@ -118,17 +140,15 @@ a:focus {
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   }
 }
-
 .intro {
   display: table;
   width: 100%;
-  height: auto;
-  padding: 100px 0;
-  white-space: nowrap;
+  height: 100%;
+  padding: 50px 0;
   text-align: center;
   color: white;
-  background: url(../img/LaunchBackgroundFade.png) no-repeat bottom center scroll;
-  background-color: black;
+  background: white;
+  background-color: white;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -137,89 +157,42 @@ a:focus {
 .intro .intro-body {
   display: table-cell;
   vertical-align: middle;
-  text-align: center;
-}
-.intro .intro-body .brand-heading .brand-heading-large {
-  text-align: center;
-  text-shadow: 2px 2px 3px black;
-}
-.intro .intro-body .intro-text .brand-heading-large {
-  text-align: center;
-  text-shadow: 2px 2px 3px black;
 }
 
-   @media (min-width: 768px) {
-     .brand-heading-large{
-       padding-top: 7.5vh;
-       padding-bottom: 5vh;
-       margin-left: -100%;
-       margin-right: -100%;
-       font-size: 6vw;
-       text-shadow: 2px 2px 3px black;
-    }
-    .intro-text{
-      line-height: inherit;
-      font-size: 3vw;
-      margin-left: -100%;
-      margin-right: -100%;
-      text-shadow: 2px 2px 3px black;
-    }
-
+.intro .intro-body .brand-heading {
+  font-size: 40px;
+}
+.intro .intro-body .intro-text {
+  font-size: 18px;
+}
+@media (min-width: 770px) {
+  .intro {
+    height: 100%;
+    padding: 0;
   }
 
-  @media (max-width: 768px) {
-    .intro {
-      width: 100%;
-      height: 100%;
-      padding: 50px;
-      text-align: center;
-    }
-    .intro-body .brand-heading .brand-heading-large{
-      width: 97.5%;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-      font-size: 100px;
-      text-align: center;
-    }
-    .intro-body .intro-text {
-      line-height: inherit;
-      width: 97.5&;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-      text-align: center;
-      font-size: 40px;
-      text-shadow: 2px 2px 3px black
-    }
+  .intro-text-container {
+      top: 175px;
+      position: relative;
   }
 
-@media (max-width: 768px) {
-    .backgroundAboutMe{
-      background: url("../img/AboutMeEdit3.png");
-      background-color: transparent;
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      background-size: cover;
-      -o-background-size: cover;
-      position: absolute;
-      width: 100%;
-      height: 130%;
-      left: -15px;
-    }
+  .intro .intro-body .brand-heading {
+    font-size: 100px;
+  }
+  .intro .intro-body .intro-text {
+    font-size: 26px;
+  }
 }
 .btn-circle {
-  z-index: 9999;
-  width: 125px;
-  height: 125px;
+  width: 70px;
+  height: 70px;
   margin-top: 15px;
   padding: 7px 16px;
-  border: 2px solid black;
+  border: 2px solid rgb(61, 67, 75);
   border-radius: 100% !important;
   font-size: 40px;
-  color: black;
-  background: rgba(255,255,255,0.5);
+  color: rgb(61, 67, 75);
+  background: transparent;
   -webkit-transition: background 0.3s ease-in-out;
   -moz-transition: background 0.3s ease-in-out;
   transition: background 0.3s ease-in-out;
@@ -228,7 +201,7 @@ a:focus {
 .btn-circle:focus {
   outline: none;
   color: #42DCA3;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(255, 255, 255, 0.1);
 }
 .btn-circle i.animated {
   -webkit-transition-property: -webkit-transform;
@@ -252,8 +225,8 @@ a:focus {
     transform: scale(1);
   }
   50% {
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
   }
   100% {
     -webkit-transform: scale(1);
@@ -266,8 +239,8 @@ a:focus {
     transform: scale(1);
   }
   50% {
-    -moz-transform: scale(1.5);
-    transform: scale(1.5);
+    -moz-transform: scale(1.2);
+    transform: scale(1.2);
   }
   100% {
     -moz-transform: scale(1);
@@ -275,242 +248,35 @@ a:focus {
   }
 }
 .content-section {
-  padding-top: 100px;
+  /* padding-top: 100px; */
 }
-
-.content-section-portfolio {
-}
-
-.centerOverlay{
-  vertical-align: middle;
-  text-align: center;
-  line-height: normal;
-}
-
-.flipper:hover .text{
-  background-color: rgba(66,220,163,.5);
-  color: black;
-  border-color: rgba(0,0,0,0);
-}
-
-.flipper:hover .backImage{
-  transition: .1s ease;
-  transition-delay: .5s;
-  filter: grayscale(100%);
-  opacity: 1;
-}
-
-.flipper:hover .text1{
-  background-color: rgba(66,220,163,.5);
-  color: black;
-  border-color: rgba(0,0,0,0);
-}
-
-.flipper:hover .backImage1{
-  transition: .1s ease;
-  transition-delay: .5s;
-  filter: grayscale(100%);
-  opacity: 1;
-}
-
-.flipper:hover .text2{
-  background-color: rgba(66,220,163,.5);
-  color: black;
-  border-color: rgba(0,0,0,0);
-}
-
-.flipper:hover .backImage2 {
-  transition: .1s ease;
-  transition-delay: .5s;
-  filter: grayscale(100%);
-  opacity: 1;
-}
-
-.flipper:hover .text3{
-  background-color: rgba(66,220,163,.5);
-  color: black;
-  border-color: rgba(0,0,0,0);
-}
-
-.flipper:hover .backImage3{
-  transition: .1s ease;
-  transition-delay: .5s;
-  filter: grayscale(100%);
-  opacity: 1;
-}
-
-.flipper:hover .text4{
-  color: black;
-  background-color: rgba(66,220,163,.5);
-  border-color: rgba(0,0,0,0);
-}
-
-.flipper:hover .backImage4{
-  transition: .1s ease;
-  transition-delay: .5s;
-  filter: grayscale(100%);
-  opacity: 1;
-}
-
-.flipper:hover .text5{
-  background-color: rgba(66,220,163,.5);
-  color: black;
-  border-color: rgba(0,0,0,0);
-}
-
-.flipper:hover .backImage5{
-  transition: .1s ease;
-  transition-delay: .5s;
-  filter: grayscale(100%);
-  opacity: 1;
-}
-
-.portfolioText{
-  font-size: 2vw;
-}
-
-.break1{
-  position: relative;
-  background: white;
-  filter: blur(20px);
-  height: 500px;
-  width: 100%;
-  z-index: 10;
-  top: 2vw;
-
-}
-
-.aboutMeContainer{
-  background-color: rgba(200, 200, 200, 0.92);
-  text-align: center;
-  margin: 0 auto;
-  width: 100%;
-  height: 10vw;
-  top: -5px;
-  left: -10px;
-  position: absolute;
-  -webkit-filter: blur(4px);
-  filter: blur(4px);
-  z-index: 1;
-}
-.aboutMeContainerPosition{
-  text-align: center;
-  width: 100%;
-  height: 10vw;
-  top: -5px;
-  left: -10px;
-  position: relative;
-  z-index: 2;
-}
-
-.aboutMe{
-  width: 100%;
-  position: absolute;
-  font-size: 5vw;
-  text-align: center;
-  top: 2.5vw;
-  vertical-align: middle;
-  text-transform: uppercase;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-.backgroundAboutMe{
-  background: url("../img/AboutMeEdit3.png") no-repeat bottom center scroll;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  position: absolute;
-  width: 100%;
-  height: 125%;
-  left: -15px;
-}
-
-.rd{
-}
-
-.pp{
-}
-
-.text, .text1, .text5, .text2, .text3, .text4{
-  font-family: "Montserrat", "Helvetica Neue";
-  white-space: normal;
-  word-wrap: normal;
-  border-width: 4px;
-  border-style: solid;
-  border-color: #42DCA3;
-  max-width: 100%;
-  overflow: visible;
-  vertical-align: middle;
-  margin: auto auto;
-  text-align: center;
-  color: rgba(255,255,255,0);
-  font-size: 2.5vw;
-  width: 100%;
-  height: 17.5vw;
-  transition: .4s ease;
-  transition-delay: .5s;
-  opacity: 1;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%)
-}
-
 .download-section {
+  width: 100%;
+  padding: 50px 0;
   color: white;
-  height: 1000px;
-  text-align: center;
-  vertical-align: middle;
-  position: relative;
-  background: url(../img/hubblefade.png);
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+  background: url(../img/downloads-bg.jpg) no-repeat center center scroll;
+  background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
 }
-
 #map {
   width: 100%;
   height: 200px;
   margin-top: 100px;
 }
-@media (min-width: 767px) {
+@media (min-width: 770px) {
   .content-section {
-    padding-top: 250px;
+    /* padding-top: 100px; */
   }
   .download-section {
-    padding: 0 0;
-    text-shadow: none;
+    padding: 100px 0;
   }
   #map {
     height: 400px;
     margin-top: 250px;
   }
-}
-
-.expand {
-    position: absolute;
-    width: 100%;
-    height: 450px;
-    bottom: 0px;
-    -webkit-transition: -webkit-transform 0.4s;
-    transition: transform 2s;
-}
-
-.expand img:hover {
-        -webkit-transform: scale(1.8) rotate(0.01deg);
-        transform: scale(1.8) rotate(0.01deg);
 }
 
 .btn {
@@ -521,7 +287,6 @@ a:focus {
   -moz-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   border-radius: 0;
-  text-shadow: 0px 0px 0px white;
 }
 .btn-default {
   border: 1px solid #42DCA3;
@@ -534,179 +299,7 @@ a:focus {
   outline: none;
   color: black;
   background-color: #42DCA3;
-  text-shadow:0px 0px 0px white;
 }
-
-.flip-container {
-	perspective: 1000px;
-  padding-top: 5vh;
-  position: relative;
-  margin-bottom: 7vh;
-  margin-left: 12.5vw;
-}
-	/* flip the pane when hovered */
-	.flip-container:hover .flipper, .flip-container.hover .flipper {
-		transform: rotateY(180deg);
-	}
-
-/*For the Top Flippers*/
-.flip-container, .flip-container5, .front, .back, .front5, .back5, .front6, .back6 {
-  width: 17.5vw;
-	height: 17.5vw;
-  position: relative;
-}
-
-/* flip speed goes here */
-.flipper {
-	transition: 0.6s;
-	transform-style: preserve-3d;
-  position: relative;
-  text-align: center;
-}
-
-/* hide back of pane during swap */
-.front, .back {
-	backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-/* front pane, placed above back */
-.front {
-	z-index: 2;
-	/* for firefox 31 */
-	transform: rotateY(0deg);
-}
-
-/* back, initially hidden pane */
-.back {
-	transform: rotateY(180deg);
-}
-
-/*Second flip on Top*/
-.flip-container5:hover .flipper, .flip-container5.hover .flipper {
-		transform: rotateY(180deg);
-	}
-
-.flip-container5 {
-	perspective: 1000px;
-  padding-top: 5vh;
-}
-
-.front5, .back5 {
-	backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-	position: absolute;
-	top: 0;
-	left: 0;
-  padding-bottom: 10vh;
-}
-
-.front5 {
-	z-index: 2;
-	/* for firefox 31 */
-	transform: rotateY(0deg);
-}
-
-.back5 {
-	transform: rotateY(180deg);
-}
-
-/*Bottom Flips*/
-.flip-container2, .flip-container3, .flip-container4, .front2, .back2, .front3, .back3, .front4, .back4 {
-	width: 17.5vw;
-	height: 17.5vh;
-  position: absolute;
-  text-align: center;
-}
-
-/*First Flip On Bottom*/
-.flip-container2:hover .flipper, .flip-container2.hover .flipper {
-		transform: rotateY(180deg);
-	}
-
-.flip-container2 {
-	perspective: 1000px;
-  padding-bottom: 5vh;
-}
-
-.front2, .back2 {
-	backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-.front2 {
-	z-index: 2;
-	/* for firefox 31 */
-	transform: rotateY(0deg);
-}
-
-.back2 {
-	transform: rotateY(180deg);
-}
-
-/*Second Flip on Bottom*/
-.flip-container3:hover .flipper, .flip-container3.hover .flipper {
-		transform: rotateY(180deg);
-	}
-
-.flip-container3 {
-	perspective: 1000px;
-  padding-bottom: 5vh;
-  position: absolute;
-}
-
-.front3, .back3 {
-	backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-.front3 {
-	z-index: 2;
-	/* for firefox 31 */
-	transform: rotateY(0deg);
-}
-
-.back3 {
-	transform: rotateY(180deg);
-}
-
-/*Third flip on Bottom*/
-.flip-container4:hover .flipper, .flip-container4.hover .flipper {
-		transform: rotateY(180deg);
-	}
-
-.flip-container4 {
-	perspective: 1000px;
-  padding-bottom: 5vh;
-  position: absolute;
-}
-
-.front4, .back4 {
-	backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-.front4 {
-	z-index: 2;
-	/* for firefox 31 */
-	transform: rotateY(0deg);
-}
-
-.back4 {
-	transform: rotateY(180deg);
-}
-
 ul.banner-social-buttons {
   margin-top: 0;
 }
@@ -715,7 +308,7 @@ ul.banner-social-buttons {
     margin-top: 15px;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 770px) {
   ul.banner-social-buttons li {
     display: block;
     margin-bottom: 20px;

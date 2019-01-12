@@ -4,6 +4,14 @@
  * Licensed under the MIT license
  */
 
+//Navbar Copy
+//Load Navbar
+$(function(){
+    $("#navbarCopy").load("../../views/navbar.html");
+    console.log("navbar attempted load");
+});
+
+
 if (typeof jQuery === 'undefined') {
   throw new Error('Bootstrap\'s JavaScript requires jQuery')
 }
@@ -23,7 +31,6 @@ if (typeof jQuery === 'undefined') {
  * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
-
 
 
 +function ($) {
@@ -60,143 +67,6 @@ if (typeof jQuery === 'undefined') {
     setTimeout(callback, duration)
     return this
   }
-
-  //Load Navbar
-  $(function(){
-    $("#navbarCopy").load("../../views/navbar.html");
-    console.log("navbar attempted load");
-  });
-
-  //Academics First Slide Show
-  $("#play1").click(function() {
-    var play = document.getElementById("play1")
-    var pause = document.getElementById("pause1")
-    if(play.style.opacity=="1"){
-      play.style.opacity = "0";
-      pause.style.opacity = "1";
-    }
-    else if (play.style.opacity=="0") {
-      play.style.opacity = "1";
-      pause.style.opacity = "0";
-      slideshow("slides1", "pause1", currentSlidesList["slides1"])
-    }
-  });
-
-  $("#left1").click(function(){
-    skip["slides1"] = true;
-    var images = document.getElementsByClassName("slides1");
-    if(currentSlidesList["slides1"] == 0){
-      slideshow("slides1", "pause1", (images.length-1));
-    }
-    else {
-      slideshow("slides1", "pause1", (currentSlidesList["slides1"]-1));
-    }
-  });
-  $("#right1").click(function(){
-    skip["slides1"] = true;
-    var images = document.getElementsByClassName("slides1");
-    if(currentSlidesList["slides1"] == images.length-1){
-      slideshow("slides1", "pause1", 0);
-    }
-    else {
-      slideshow("slides1", "pause1", (currentSlidesList["slides1"]+1));
-    }
-  });
-
-//Academics Second Slide Show
-$("#play2").click(function() {
-  var play = document.getElementById("play2")
-  var pause = document.getElementById("pause2")
-  if(play.style.opacity=="1"){
-    play.style.opacity = "0";
-    pause.style.opacity = "1";
-  }
-  else if (play.style.opacity=="0") {
-    play.style.opacity = "1";
-    pause.style.opacity = "0";
-    slideshow("slides2", "pause2", currentSlidesList["slides2"])
-  }
-});
-
-$("#left2").click(function(){
-  skip["slides2"] = true;
-  var images = document.getElementsByClassName("slides2");
-  if(currentSlidesList["slides2"] == 0){
-    slideshow("slides2", "pause2", (images.length-1));
-  }
-  else {
-    slideshow("slides2", "pause2", (currentSlidesList["slides2"]-1));
-  }
-});
-$("#right2").click(function(){
-  skip["slides2"] = true;
-  var images = document.getElementsByClassName("slides2");
-  if(currentSlidesList["slides2"] == images.length-1){
-    slideshow("slides2", "pause2", 0);
-  }
-  else {
-    slideshow("slides2", "pause2", (currentSlidesList["slides2"]+1));
-  }
-});
-
-//Slideshow variables
-var currentSlidesList = {
-  slides1:[0],
-  slides2:[0],
-};
-
-var skip = {
-  slides1: false,
-  slides2: false,
-}
-
-//Couresel Slide Show
-slideshow("slides1", "pause1", 0)
-slideshow("slides2", "pause2", 0)
-
-function slideshow(tag, pauseid, currentSlide){
-
-  var pause = document.getElementById(pauseid);
-  var images = document.getElementsByClassName(tag);
-  currentSlidesList[tag] = currentSlide;
-
-  //Top set
-
-
-   if (currentSlide>=images.length){
-     currentSlide = 0;
-   };
-
-   var i
-
-   for (i=0; i<images.length; i++){
-     images[i].style.transition="2s ease";
-     images[i].style.display="none";
-     images[i].style.opacity="0";
-   };
-
-   images[currentSlide].style.display="block";
-
-   setTimeout(function () {
-     images[currentSlide].style.opacity="1";
-   }, 100);
-
-   setTimeout(function () {
-     var opacity = pause.style.opacity;
-     if(opacity=="1" || skip[tag]){
-      //Exit slideshow loop reset skip
-      skip[tag] = false;
-     }
-     else{
-       images[currentSlide].style.opacity="0";
-       setTimeout(function () {
-         currentSlide++
-         slideshow(tag, pauseid, currentSlide)
-       } , 2000);
-    };
-
-   }, 5000);
- };
 
   $(function () {
     $.support.transition = transitionEnd()

@@ -1,25 +1,27 @@
 {
-  "name": "bendaghir",
-  "version": "1.0.0",
-  "description": "JSON Package for bendaghir.com",
-  "main": "app.js",
-  "scripts": {
-    "test": "print(\"Working\")"
+  "name": "grayscale",
+  "title": "Grayscale",
+  "version": "3.3.7+1",
+  "homepage": "http://startbootstrap.com/template-overviews/grayscale",
+  "author": "Start Bootstrap",
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE"
+  },
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "browser-sync": "^2.13.0",
+    "font-awesome": "^4.6.3",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.10",
+    "gulp-header": "^1.8.7",
+    "gulp-less": "^3.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.4",
+    "jquery": "^1.11.3"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ben-daghir/bendaghir.com.git"
-  },
-  "keywords": [
-    "website"
-  ],
-  "author": "Benjamin Daghir",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ben-daghir/bendaghir.com/issues"
-  },
-  "homepage": "https://github.com/ben-daghir/bendaghir.com#readme",
-  "dependencies": {
-    "express": "^4.16.2"
+    "url": "https://github.com/BlackrockDigital/startbootstrap-grayscale.git"
   }
 }

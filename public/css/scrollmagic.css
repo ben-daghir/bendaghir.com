@@ -1,0 +1,101 @@
+@media (max-width: 770px) {
+    #container {
+        display: block;
+        background: url("../img/LaunchBackgroundMobile.png");
+        background-size: 260%;
+        background-repeat: no-repeat;
+        background-position: center top;
+        height: 100%;
+    }
+
+
+    #intro-scene {
+        display: block;
+        position: relative;
+        top: 20px;
+    }
+
+    .intro-body {
+        height: 100%;
+    }
+
+    .background {
+        display: none;
+    }
+
+    .rocket {
+        display: none;
+    }
+
+    .intro-text-scroll {
+        display: block;
+        text-shadow: 1px 1px black;
+        padding: 0px 10px;
+    }
+}
+
+@media (max-width: 740px) {
+    #container {
+        background-position: center bottom;
+        background-size: cover;
+    }
+}
+
+
+@media (min-width: 770px) {
+    #container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      perspective: 1px;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      padding-right: 20px;
+      box-sizing: content-box;
+      height: 700px
+    }
+
+
+    #intro-scene {
+      height: 1000px;
+      position: relative;
+      transform-style: preserve-3d;
+      font-size: 20px;
+    }
+
+    .background {
+        transform: translateZ(-2px);
+        height: 2300px;
+        width: 310%;
+        background: url(../img/LaunchBackgroundFade.png) no-repeat bottom center scroll;
+            background-size: auto auto;
+        background-size: auto auto;
+        background-size: cover;
+        margin: auto;
+        position: relative;
+        left: -105%;
+        top: -170%;
+    }
+
+    .rocket {
+        transform: translateZ(-1px);
+        margin: auto;
+        height: 480px;
+        width: 150px;
+        background: url(../img/rocket.png) no-repeat bottom center scroll;
+            background-color: rgba(0, 0, 0, 0);
+            background-size: auto auto;
+        background-size: auto auto;
+        background-size: cover;
+        background-color: transparent;
+        opacity: 0.8;
+        top: -125px;
+        position: relative;
+    }
+
+    .intro-text-scroll {
+        text-shadow: 2px 2px black;
+    }
+}

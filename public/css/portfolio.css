@@ -1,0 +1,76 @@
+.tile {
+    text-align: center;
+    vertical-align: middle;
+    border: 2px solid black;
+    height: 200px;
+    transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    text-shadow:
+        -1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+
+.tile__face--front {
+    position: absolute;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    margin: auto;
+}
+
+.tile__face--back {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    position: absolute;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    margin: auto;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-gap: 10px;
+}
+
+.tile-heading {
+    font-size: 10px;
+    margin-top: 20px;
+}
+
+@media (min-width: 600px) {
+    .tile-heading {
+        font-size: 20px;
+    }
+}
+
+
+@media (min-width: 780px) {
+    .tile-heading {
+        font-size: 30px;
+    }
+    .tile:hover {
+        transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+    }
+    .tile {
+        height: 300px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .tile-heading {
+        font-size: 40px;
+    }
+}
