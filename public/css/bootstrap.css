@@ -247,6 +247,8 @@ th {
   }
   .label {
     border: 1px solid #000;
+    float: right;
+
   }
   .table {
     border-collapse: collapse !important;
@@ -2506,10 +2508,13 @@ legend {
   border-bottom: 1px solid #e5e5e5;
 }
 label {
-  display: inline-block;
-  max-width: 100%;
-  margin-bottom: 5px;
-  font-weight: bold;
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+    float: left;
+    text-transform: uppercase;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 input[type="search"] {
   -webkit-box-sizing: border-box;

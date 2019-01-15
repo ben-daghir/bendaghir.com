@@ -49,6 +49,178 @@ a:focus {
   text-decoration: none;
   color: #1d9b6c;
 }
+
+.form-class {
+    color:black;
+    width:85%;
+    position:relative;
+    margin: auto;
+    margin-top:50px;
+    margin-bottom: 50px;
+}
+
+.left-form {
+    width: 75%;
+    display: block;
+    margin: auto;
+}
+
+.right-form {
+    width: 75%;
+    display: block;
+    margin: auto;
+}
+
+.form-text {
+    text-align: center;
+}
+
+@media (min-width: 770px) {
+    .form-class {
+        color:black;
+        width:50%;
+        position:relative;
+        margin: auto;
+        margin-top:100px;
+        margin-bottom: 100px;
+    }
+
+    .left-form {
+        width: 45%;
+        display:inline-block;
+        float:left;
+    }
+
+    .right-form {
+        width: 45%;
+        display:inline-block;
+        float:right;
+    }
+}
+
+input, select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+input::selection {
+  background: #ffb7b7; /* WebKit/Blink Browsers */
+}
+input::-moz-selection {
+  background: #ffb7b7; /* Gecko Browsers */
+}
+
+textarea::selection {
+  background: #ffb7b7; /* WebKit/Blink Browsers */
+}
+textarea::-moz-selection {
+  background: #ffb7b7; /* Gecko Browsers */
+}
+
+.s-button {
+    margin: auto;
+	position: relative;
+	height: 60px;
+	width: 200px;
+	background: #00BCD4;
+	border-radius: 8px;
+	text-align: center;
+	cursor: pointer;
+	overflow: hidden;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.s-submit,
+.s-arrow {
+	display: inline-block;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+.s-submit {
+	text-transform: uppercase;
+	margin: 14px 0 0 26px;
+}
+
+.s-arrow {
+	position: relative;
+	top: 2px;
+	opacity: 0;
+    left: 4px;
+}
+
+.s-line {
+	height: 3px;
+	width: 20px;
+	border-radius: 6px;
+	background: #fff;
+}
+
+.s-top {
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.s-bottom {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	margin-top: 10px;
+}
+
+.s-button:active {
+	-webkit-transform: scale(1.3);
+	-moz-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+.s-button.s-hover .s-submit {
+	-webkit-transform: translateX(-90px);
+	-moz-transform: translateX(-90px);
+	transform: translateX(-90px);
+	opacity: 0;
+}
+
+.s-button.s-hover .s-arrow {
+	-webkit-transform: translateX(-70px);
+	-moz-transform: translateX(-70px);
+	transform: translateX(-70px);
+	opacity: 1;
+}
+
+.s-button.s-active .s-arrow {
+	opacity: 1;
+	-webkit-transform: rotate(90deg) translateY(70px);
+	-moz-transform: rotate(90deg) translateY(70px);
+	transform: rotate(90deg) translateY(70px);
+}
+
+.s-button.s-active {
+	background: #4CAF50;
+}
+
+.s-button.s-active .s-submit {
+	opacity: 0;
+}
+
+.s-button.s-active .s-top {
+	width: 34px;
+}
+
+.s-button.s-active .s-bottom {
+	margin: 14px 0 0 12px;
+}
+
 .light {
   font-weight: 400;
 }
