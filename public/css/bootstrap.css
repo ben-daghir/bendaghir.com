@@ -1297,9 +1297,23 @@ p {
   font-weight: 300;
   line-height: 1.4;
 }
+.slides {
+    height: 250px;
+}
+.slideshows {
+    margin:auto;
+    max-height:500px;
+    height:100%;
+    opacity: 1;
+    transition: 2.5s linear;
+    image-orientation: from-image;
+}
 @media (min-width: 768px) {
   .lead {
     font-size: 21px;
+  }
+  .slides {
+      height: 500px;
   }
 }
 small,
